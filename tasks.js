@@ -16,10 +16,6 @@ function startApp(name){
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
-/** 
-* @param  {string} help help command
-* @returns {void}
-*/
 
 
 
@@ -74,6 +70,10 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
+
+/**
+ * help function lists all the possible commands we have in the main function
+ */
 
 function help(){
   console.log("quit command",)
