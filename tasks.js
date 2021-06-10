@@ -35,6 +35,8 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+
+  
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
@@ -43,6 +45,8 @@ function onDataReceived(text) {
   }
   else if (text === 'help\n'){
     help();
+  }else if (text === 'list\n'){
+    list();
   }
   else{
     
@@ -74,6 +78,22 @@ function hello(x){
   console.log( y.trim() +"!");
 }
 
+/**
+ * list
+ *
+ * @returns {void}
+ */
+ function list(){
+   var List = ["task1", "task2", "task3"];
+   List.map(x=>{
+        console.log(x)
+   })
+   taskNumber=List.length;
+   console.log("Number of tasks:", taskNumber)
+   
+
+  
+}
 
 /**
  * help function lists all the possible commands we have in the main function
