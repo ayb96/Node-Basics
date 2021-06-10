@@ -51,6 +51,9 @@ function onDataReceived(text) {
   else if (text.trim().split(" ")[0] == "add"){
     add(text.trim().split(" ")[1]);
   }
+  else if (text.trim().split(" ")[0] == "remove"){
+    remove(text.trim().split(" ")[1]);
+  }
   else{
     
     
@@ -86,7 +89,7 @@ function hello(x){
  *
  * @returns {void}
  */
- var List = ["task1", "task2", "task3"];
+ var List = ["task1", "task2", "task3", "task4", "task5"];
  function list(){
    
    List.map(x=>{
@@ -120,7 +123,19 @@ function add(x){
     console.log(List)
   }
 }
-
+function remove(x){
+  
+  if(0 <= x && x< (List.length)) {
+    List.splice(x-1,1)
+    console.log(List)
+  }else if(x === undefined){
+    result = List.splice(List.length-1,1)
+    console.log(List)
+    
+  }else{
+    console.log("error")
+  }
+}
 /**
  * Exits the application
  *
