@@ -48,6 +48,9 @@ function onDataReceived(text) {
   }else if (text === 'list\n'){
     list();
   }
+  else if (text.trim().split(" ")[0] == "add"){
+    add(text.trim().split(" ")[1]);
+  }
   else{
     
     
@@ -83,8 +86,9 @@ function hello(x){
  *
  * @returns {void}
  */
+ var List = ["task1", "task2", "task3"];
  function list(){
-   var List = ["task1", "task2", "task3"];
+   
    List.map(x=>{
         console.log(x)
    })
@@ -105,6 +109,16 @@ function help(){
   console.log("unknown command")
 
   
+}
+
+
+function add(x){
+  if(x == undefined){
+      console.log("error");
+  }else{
+    List.push(x);
+    console.log(List)
+  }
 }
 
 /**
