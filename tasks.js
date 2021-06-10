@@ -81,7 +81,7 @@ function hello(x){
 
 function help(){
   console.log("quit command",)
-  console.log("hello command")
+  console.log("extended hello command")
   console.log("unknown command")
 
   
