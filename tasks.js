@@ -16,6 +16,11 @@ function startApp(name){
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
+/** 
+* @param  {string} help help command
+* @returns {void}
+*/
+
 
 
 /**
@@ -39,6 +44,9 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
+  }
+  else if (text === 'help\n'){
+    help();
   }
   else{
     unknownCommand(text);
@@ -67,6 +75,13 @@ function hello(){
   console.log('hello!')
 }
 
+function help(){
+  console.log("quit command",)
+  console.log("hello command")
+  console.log("unknown command")
+
+  
+}
 
 /**
  * Exits the application
