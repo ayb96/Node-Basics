@@ -136,7 +136,7 @@ function remove(x){
     console.log(List)
     
   }else{
-    console.log("error")
+    console.log("error better remove")
   }
 }
 /**
