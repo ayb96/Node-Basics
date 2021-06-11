@@ -54,6 +54,9 @@ function onDataReceived(text) {
   else if (text.trim().split(" ")[0] == "remove"){
     remove(text.trim().split(" ")[1]);
   }
+  else if (text.trim().split(" ")[0] == "edit"){
+    edit(text.trim().split(" ")[1],text.trim().split(" ")[2]);
+  }
   else{
     
     
@@ -134,6 +137,24 @@ function remove(x){
   }else if(x === undefined){
     result = List.splice(List.length-1,1)
     console.log(List)
+    
+  }else{
+    console.log("error better remove")
+  }
+}
+
+function edit(x,y){
+  
+  if(0 <= x && x< (List.length)) {
+    List.splice(x-1,0,y)
+    console.log(List)
+  }
+  else if(y === undefined) {
+    List.splice(List.length,0,x)
+    console.log(List)
+  }else if(x === undefined){
+    //result = List.splice(List.length-1,1)
+    console.log("error")
     
   }else{
     console.log("error better remove")
