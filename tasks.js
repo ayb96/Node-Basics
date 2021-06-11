@@ -56,6 +56,10 @@ function onDataReceived(text) {
   }
   else if (text.trim().split(" ")[0] == "edit"){
     edit(text.trim().split(" ")[1],text.trim().split(" ")[2]);
+  }else if (text.trim().split(" ")[0] == "check"){
+    check(text.trim().split(" ")[1]);
+  }else if (text.trim().split(" ")[0] == "uncheck"){
+    uncheck(text.trim().split(" ")[1]);
   }
   else{
     
@@ -92,12 +96,63 @@ function hello(x){
  *
  * @returns {void}
  */
- var List = ["task1", "task2", "task3", "task4", "task5"];
+ var List = [{
+  x: "task1",
+  done: true
+},{
+  x: "task2",
+  done: false
+},{
+  x: "task3",
+  done: false
+},{
+  x: "task4",
+  done: true
+},{
+  x: "task5",
+  done: false
+}];
+function add(y){
+  let obj = {
+    x: y,
+    done: true
+  }
+  if(y == undefined){
+      console.log("error");
+  }else{
+    
+    List.push(obj);
+    console.log(List)
+  }
+}
+
+function check(y){
+  for(var i =0;i<List.length;i++){
+  if(y == i+1){
+      List[i].done = Boolean(true);
+      
+  }
+}
+}
+function uncheck(y){
+  for(var i =0;i<List.length;i++){
+      if(y == i+1){
+          List[i].done = Boolean(false);
+          
+      }
+}
+}
+
+
  function list(){
    
-   List.map(x=>{
-        console.log(x)
-   })
+   for(var i=0;i<List.length;i++){
+      if(List[i].done == true){
+        console.log(i+1+" - [✓] "+List[i].x+"\n")
+      }else{
+        console.log(i+1+" - [ ] "+List[i].x+"\n")
+      }
+   }
    taskNumber=List.length;
    console.log("Number of tasks:", taskNumber)
    
@@ -121,14 +176,7 @@ function help(){
 }
 
 
-function add(x){
-  if(x == undefined){
-      console.log("error");
-  }else{
-    List.push(x);
-    console.log(List)
-  }
-}
+
 function remove(x){
   
   if(0 <= x && x< (List.length)) {
@@ -172,3 +220,4 @@ function quit(){
 
 // The following line starts the application
 startApp("Ayoub")
+
