@@ -110,6 +110,9 @@ function help(){
   console.log("quit command",)
   console.log("extended hello command")
   console.log("unknown command")
+  console.log("list command")
+  console.log("add command")
+  console.log("remove command")
 
   
 }
